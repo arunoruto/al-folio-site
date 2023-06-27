@@ -11,7 +11,6 @@ layout: default
 
           <article>
             <div class="cv">
-              {% unless site.data.resume %}
               {% for entry in site.data.cv %}
                 <div class="card mt-3 p-3">
                   <h3 class="card-title font-weight-medium">{{ entry.title }}</h3>
@@ -30,31 +29,6 @@ layout: default
                   </div>
                 </div>
               {% endfor %}
-              {% else %}
-              {% assign maps = "basics" | split:"," %}
-              {% assign tables = "" | split:"," %}
-              {% assign time_tables = "education,work,volunteer,projects,awards" | split:"," %}
-              {% assign skip = "references,interests,languages,skills,certificates,meta,publications" | split:"," %}
-              {% for data in site.data.resume %}
-                {% if skip contains data[0] %}
-                  {% continue %}
-                {% endif %}
-                <div class="card mt-3 p-3">
-                  <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
-                  <div>
-                  {% if maps contains data[0] %}
-                    {% include resume/map.html %}
-                  {% elsif tables contains data[0] %}
-                    {% include resume/table.html %}
-                  {% elsif time_tables contains data[0] %}
-                    {% include resume/time_table.html %}
-                  {% else %}
-                    {{ entry.contents }}
-                  {% endif %}
-                  </div>
-                </div>
-              {% endfor %}
-              {% endunless %}
               </div>
           </article>
 

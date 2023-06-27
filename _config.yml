@@ -14,7 +14,7 @@ footer_text: >
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 keywords: space, science, astronomy, programming, maths, climbing, jekyll # add your own keywords or leave empty
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
-icon: /assets/favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
+icon: favicon.png # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 
 url: https://www.arnaut.me # the base hostname & protocol for your site
 baseurl: "" # the subpath of your site, e.g. /blog/
@@ -224,6 +224,7 @@ plugins:
   - jekyll-toc
   - jekyll-twitter-plugin
   - jemoji
+  - jekyll-get-json
 
 # Sitemap settings
 defaults:
@@ -416,3 +417,11 @@ mdb:
 medium_zoom:
   version: "1.0.8"
   integrity: "sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8="
+
+# -----------------------------------------------------------------------------
+# Get JSON Resume data
+# -----------------------------------------------------------------------------
+
+jekyll_get_json:
+  - data: resume
+    json: "https://gist.githubusercontent.com/arunoruto/9d8bdf6e325077cff45b79e5f574e6e3/raw"
