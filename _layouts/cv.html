@@ -31,9 +31,7 @@ layout: default
                 </div>
               {% endfor %}
               {% else %}
-              {% assign maps = "basics" | split:"," %}
-              {% assign tables = "" | split:"," %}
-              {% assign time_tables = "education,work,volunteer,projects,awards" | split:"," %}
+              
               {% assign skip = "references,interests,languages,skills,certificates,meta,publications" | split:"," %}
               {% for data in site.data.resume %}
                 {% if skip contains data[0] %}
@@ -42,15 +40,22 @@ layout: default
                 <div class="card mt-3 p-3">
                   <h3 class="card-title font-weight-medium">{{ data[0] | capitalize }}</h3>
                   <div>
-                  {% if maps contains data[0] %}
-                    {% include resume/map.html %}
-                  {% elsif tables contains data[0] %}
-                    {% include resume/table.html %}
-                  {% elsif time_tables contains data[0] %}
-                    {% include resume/time_table.html %}
-                  {% else %}
-                    {{ entry.contents }}
-                  {% endif %}
+                  {% case data[0] %}
+                    {% when "basics" %}
+                      {% include resume/basics.html %}
+                    {% when "education" %}
+                      {% include resume/education.html %}
+                    {% when "work" %}
+                      {% include resume/work.html %}
+                    {% when "volunteer" %}
+                      {% include resume/volunteer.html %}
+                    {% when "projects" %}
+                      {% include resume/projects.html %}
+                    {% when "awards" %}
+                      {% include resume/awards.html %}
+                    {% else %}
+                      
+                  {% endcase %}
                   </div>
                 </div>
               {% endfor %}

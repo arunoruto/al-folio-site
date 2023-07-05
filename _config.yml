@@ -420,7 +420,7 @@ medium_zoom:
   integrity: "sha256-7PhEpEWEW0XXQ0k6kQrPKwuoIomz8R8IYyuU1Qew4P8="
 
 # -----------------------------------------------------------------------------
-# Get JSON Resume data
+# Get external JSON data
 # -----------------------------------------------------------------------------
 
 jekyll_get_json:
