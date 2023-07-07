@@ -6,6 +6,9 @@
     border-radius: 48% 52% 68% 32% / 42% 28% 72% 58%;
     background: linear-gradient(to right, #23D5AB, #23A6D5, #E73C7E, #EE7752, #DDD6F3);
     background-size: 500% 100%;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    object-position: center 25%; 
     animation: 
         blobber 60s 0s linear infinite
 }
