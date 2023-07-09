@@ -426,3 +426,16 @@ medium_zoom:
 jekyll_get_json:
   - data: resume
     json: "https://gist.githubusercontent.com/arunoruto/9d8bdf6e325077cff45b79e5f574e6e3/raw"
+jsonresume:
+  - basics
+  - work
+  - education
+  - publications
+  - projects
+  - volunteer
+  - awards
+  # - certificates
+  - skills
+  - languages
+  # - interests
+  # - references

@@ -1,4 +1,5 @@
 ---
+#layout: {% if site.data.resume %}resume{% else %}cv{% endif %}
 layout: cv
 permalink: /cv/
 title: cv
